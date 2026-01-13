@@ -1,1 +1,264 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>EMI & EMI – Wotman Technology Lab</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <style>
+        /* =======================
+           RESET GENERAL
+        ======================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", Tahoma, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(180deg, #f5f7fb, #e9eef8);
+            color: #1f2933;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        /* =======================
+           HEADER
+        ======================== */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 60px;
+            background: #ffffff;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            animation: slideDown 0.8s ease;
+        }
+
+        header strong {
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        nav a {
+            margin-left: 25px;
+            color: #374151;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #2563eb;
+        }
+
+        .btn-primary {
+            background: #2563eb;
+            color: #ffffff;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(37,99,235,0.4);
+        }
+
+        /* =======================
+           HERO
+        ======================== */
+        .hero {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 90px 60px;
+            gap: 60px;
+        }
+
+        .hero-text {
+            max-width: 600px;
+            animation: fadeLeft 1s ease forwards;
+            opacity: 0;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #e0e7ff;
+            color: #1d4ed8;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 42px;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        h1 span {
+            color: #f59e0b;
+        }
+
+        .hero-text p {
+            font-size: 18px;
+            color: #4b5563;
+            margin-bottom: 30px;
+        }
+
+        .hero-buttons a {
+            margin-right: 15px;
+        }
+
+        .btn-secondary {
+            border: 2px solid #2563eb;
+            color: #2563eb;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background: #2563eb;
+            color: #ffffff;
+        }
+
+        /* =======================
+           IMAGEN + LOGO
+        ======================== */
+        .hero-image {
+            position: relative;
+            width: 360px;
+            animation: popIn 1.2s ease forwards;
+            opacity: 0;
+        }
+
+        .hero-image img {
+            width: 100%;
+            border-radius: 25px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+        }
+
+        .logo-text {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            color: #ffffff;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-shadow: 0 4px 25px rgba(0,0,0,0.6);
+        }
+
+        .logo-text .l1 { font-size: 26px; }
+        .logo-text .l2 { font-size: 20px; margin-top: 6px; }
+        .logo-text .l3 { font-size: 16px; margin-top: 6px; opacity: 0.9; }
+
+        /* =======================
+           FOOTER
+        ======================== */
+        footer {
+            text-align: center;
+            padding: 30px;
+            font-size: 14px;
+            color: #6b7280;
+            background: #ffffff;
+            animation: fadeUp 1s ease;
+        }
+
+        /* =======================
+           ANIMACIONES
+        ======================== */
+        @keyframes fadeLeft {
+            from { transform: translateX(-40px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        @keyframes popIn {
+            from { transform: scale(0.85); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes fadeUp {
+            from { transform: translateY(30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        /* =======================
+           RESPONSIVE
+        ======================== */
+        @media (max-width: 900px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <strong>EMI & EMI</strong>
+    <nav>
+        <a href="#">Solución</a>
+        <a href="#">Proceso</a>
+        <a href="#">Contacto</a>
+        <a href="#" class="btn-primary">Cotización</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <div class="hero-text">
+        <span class="badge">Automatización integral sin perder oportunidades</span>
+        <h1>
+            Si tu empresa <span>responde tarde</span>, estás perdiendo leads,
+            ventas y dinero.
+        </h1>
+        <p>
+            Creamos sistemas inteligentes con automatización e IA para que tu
+            negocio funcione 24/7 sin fricción.
+        </p>
+        <div class="hero-buttons">
+            <a href="#" class="btn-primary">Pedir diagnóstico</a>
+            <a href="#" class="btn-secondary">Ver la solución</a>
+        </div>
+    </div>
+
+    <div class="hero-image">
+        <img src="emi.png" alt="EMI & EMI Technology Lab">
+        <div class="logo-text">
+            <div class="l1">EMI & EMI</div>
+            <div class="l2">WOTMAN</div>
+            <div class="l3">TECHNOLOGY LAB</div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    © 2023 EMI & EMI – Wotman Technology Lab – Sistemas Web IA
+</footer>
+
+</body>
+</html>
